@@ -6,10 +6,13 @@ import store from './utils/store';
 // import SideBar from './Components/SideBar';
 // import Side from './Components/Side';
 
-import {  RouterProvider, createBrowserRouter } from 'react-router-dom';
+import {  Route, Router, RouterProvider, Routes, createBrowserRouter } from 'react-router-dom';
 import MainContainer from './Components/MainContainer';
 import WatchPage from './Components/WatchPage';
 import Demo from './Components/Demo';
+import SearchResults from './Components/SearchResults';
+import Login from './Components/Login';
+import History from './Components/History';
 
 
 function App() {
@@ -32,6 +35,20 @@ function App() {
         path:"demo",
         element:<Demo/>
       },
+      {
+        path:"search",
+        element:<SearchResults/>
+      },
+
+      {
+        path:"creditional",
+        element:<Login/>
+      },
+
+      {
+        path:"history",
+        element:<History/>
+      },
      
     ]
     }
@@ -49,19 +66,26 @@ function App() {
 
         
 
-        <Provider store={store}>
-        <div className='bg-black text-gray-50 h-full '>
 
-          
-            <Header/>
+        <Provider store={store}>
+
+        <div className='bg-black text-gray-50 h-full font-roboto'>
+        <RouterProvider router={appRouter}>
+
+
+
             {/* <div className='absolute  '>
             <SideBar />
             </div> */}
-            <RouterProvider router={appRouter}/>
-       
+
+</RouterProvider>
+
         </div>
+
         </Provider>
 
+
+        
 
   );
 }

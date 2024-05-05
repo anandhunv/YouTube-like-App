@@ -1,29 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { YOUTUBE_CHANNEL_API } from '../utils/constants'
+import getTimeDifference from '../utils/time';
+import useChannelDetails from '../Hooks/useChannel';
+import formatNumber from '../utils/viewCount';
 
 const VideoCard = ({videoData}) => {
+  
+  const [dp,setDp]=useState()
 
+  const {snippet,statistics} = videoData;
+  const {channelTitle,title,thumbnails,channelId,publishedAt}=snippet;
 
 // console.log(videoData);
 
-const {snippet,statistics} = videoData;
-const {channelTitle,title,thumbnails}=snippet;
+const channelDetails = useChannelDetails(channelId);
+
+const formattedTimeDifference = getTimeDifference(publishedAt);
 
 
-function formatNumber(number) {
-  const billion = 1e9;
-  const million = 1e6;
-  const thousand = 1e3;
 
-  if (number >= billion) {
-    return (number / billion).toFixed(1) + 'B';
-  } else if (number >= million) {
-    return (number / million).toFixed(1) + 'M';
-  } else if (number >= thousand) {
-    return (number / thousand).toFixed(1) + 'K';
-  } else {
-    return number.toString();
-  }
-}
+
 
 const {viewCount} = statistics;
 const formattedCount = formatNumber(viewCount);
@@ -36,9 +32,24 @@ const formattedCount = formatNumber(viewCount);
 
           <img src={thumbnails?.medium?.url} alt='Thumbanil' className=' rounded-xl w-[380px]'/>
           <ul className='py-2 '>
-          <li className='font-bold text-[16px] line-clamp-2 '>{title}</li>
-            <li className='text-sm text-zinc-600'>{channelTitle}</li>
-            <li className='text-sm text-zinc-600'>{formattedCount} views</li>
+            <div className='flex justify-center'>
+            {channelDetails?.map((d)=><img key={d.id} src={d?.snippet?.thumbnails?.high?.url} alt='' className='rounded-full  h-7 mr-3 ' />)}   
+<div>
+<li className='font-roboto-medium text-[16px] line-clamp-2 '>{title}</li>
+
+<li className='text-sm text-zinc-600'>{channelTitle}</li>
+<div className='flex'>
+<li className='text-sm text-zinc-600 mr-1'>{formattedCount} views |</li>
+            <li className='text-sm text-zinc-600'>{formattedTimeDifference}</li>
+
+</div>
+          
+
+          
+</div>
+            </div>
+        
+          
 
           </ul>
 

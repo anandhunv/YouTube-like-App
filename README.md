@@ -9,7 +9,7 @@ Developed a YouTube-like video streaming app that includes essential features su
 ![page2](screenshots/search_result.png)
 ![page3](screenshots/result.png)
 ![page4](screenshots/video.png)
-![page5](screenshots/live chat.png)
+![page5](screenshots/livechat.png)
 ![page6](screenshots/comment.png)
 
 

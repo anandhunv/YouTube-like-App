@@ -21,7 +21,7 @@ const MainContainer=()=>{
 
     },[dispatch,location])
     return(
-        <div className="overflow-scroll md:mb-20 mb-52 md:mt-0 mt-5  "style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        <div className="overflow-scroll md:mb-20 mb-52 md:mt-0 mt-8  "style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
     
     <ButtonList/>
     <div className="flex">

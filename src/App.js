@@ -13,6 +13,7 @@ import Demo from './Components/Demo';
 import SearchResults from './Components/SearchResults';
 import Login from './Components/Login';
 import History from './Components/History';
+import You from './Components/You';
 
 
 function App() {
@@ -48,6 +49,10 @@ function App() {
       {
         path:"history",
         element:<History/>
+      },
+      {
+        path:"you",
+        element:<You/>
       },
      
     ]

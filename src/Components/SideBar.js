@@ -82,7 +82,7 @@ const SideBar=()=>{
 
             </div>
 
-            <div className="border-b border-gray-600 md:p-8 p-3">
+            <div className="border-b border-gray-600 md:p-8 p-3 md:mb-0 mb-40">
             
             <h1 className="font-bold">Subscriptions</h1>
             <ul>

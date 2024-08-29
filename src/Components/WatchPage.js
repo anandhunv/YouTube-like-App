@@ -44,7 +44,7 @@ const WatchPage = () => {
   };
 
   return (
-    <div className='md:flex md:flex-col md:mt-0 mt-5 overflow-scroll ' style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+    <div className='md:flex md:flex-col md:mt-0 mt-9 overflow-scroll ' style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
       <div className='md:m-2 md:p-2 md:flex  md:justify-evenly'>
         <div className='VideoFrame'>
           <iframe
@@ -71,7 +71,7 @@ const WatchPage = () => {
               </button></div>  
         </div>
 
-          <div className='overflow-scroll flex md:flex md:flex-col md:h-[450px] md:aspect-auto  'style={{ scrollbarWidth: 'none' }}>
+          <div className='overflow-scroll flex md:flex md:flex-col h-auto md:h-[450px] md:w-auto  md:aspect-auto 'style={{ scrollbarWidth: 'none' }}>
           {live ? (
               videos2?.map(video => (
                 <Link to={'/watch?v=/' + video?.id} key={video?.id}>
@@ -111,7 +111,7 @@ const WatchPage = () => {
       {/* <CommentsContainer/> */}
       <div className='h-max md:mb-20 mb-40'>
         <div className=' bg '>
-          <h1 className='font-semibold text-xl'>Comments:</h1>
+          <h1 className='font-semibold md:text-lg text-base'>Comments:</h1>
         </div>
         <CommentOriginal videos={videos} />
       </div>

@@ -36,16 +36,16 @@ const CommentOriginal = () => {
             {comments?.map((s) => (
                 <div className='m-3  bg-neutral-950 flex p-4' key={s.id}>
                     <div className='flex'>
-                        <img src={s?.snippet?.topLevelComment?.snippet?.authorProfileImageUrl} alt='' className='rounded-full h-8 mr-2' />
+                        <img src={s?.snippet?.topLevelComment?.snippet?.authorProfileImageUrl} alt='' className='rounded-full md:h-8 h-6 w-6 md:w-8 mr-2' />
                         
 
                     </div>
                     <div className='ml-3'>
                       <div className='flex '>
-                        <h1 className='text-sm font-medium mb-1' >{s?.snippet?.topLevelComment?.snippet?.authorDisplayName}</h1>
-                        <h1 className='text-zinc-400 ml-2 text-sm'>{formatRelativeTime(s?.snippet?.topLevelComment?.snippet?.publishedAt)}</h1>
+                        <h1 className='md:text-sm text-[13px] font-medium mb-1' >{s?.snippet?.topLevelComment?.snippet?.authorDisplayName}</h1>
+                        <h1 className='text-zinc-400 ml-2 md:text-sm text-[11px]'>{formatRelativeTime(s?.snippet?.topLevelComment?.snippet?.publishedAt)}</h1>
                         </div>
-                         <h1 className='text-sm'>{s?.snippet?.topLevelComment?.snippet?.textOriginal}</h1>
+                         <h1 className='md:text-sm text-[11px]'>{s?.snippet?.topLevelComment?.snippet?.textOriginal}</h1>
                          <div className='flex items-center'>
                           <h1>    {s?.snippet?.topLevelComment?.snippet?.likeCount===0?"": <i className="fa-solid fa-heart text-[12px] text-rose-600"></i>}</h1>  
                           <h1 className=' ml-1 text-slate-500 text-[15px] mt-1'> {s?.snippet?.topLevelComment?.snippet?.likeCount===0?"":s?.snippet?.topLevelComment?.snippet?.likeCount}</h1>

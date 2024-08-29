@@ -28,7 +28,7 @@ const formattedCount = formatNumber(viewCount);
 // const {url}=videoData?.snippet?.thumbnails?.high
   return (
 
-      <div className=' w-[250px]   rounded-xl mx-5 my-5  cursor-pointer  '>
+      <div className=' md:w-[250px]  w-[300px] rounded-xl mx-5 my-5  cursor-pointer  '>
 
           <img src={thumbnails?.medium?.url} alt='Thumbanil' className=' rounded-xl w-[380px]'/>
           <ul className='py-2 '>

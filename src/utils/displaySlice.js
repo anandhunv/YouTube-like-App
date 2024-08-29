@@ -7,6 +7,7 @@ const displaySlice=createSlice({
         data:null,
         show:true,
         side:true,
+        name:"user123",
     },
     reducers:{
         addResult:(state,action)=>{
@@ -23,6 +24,10 @@ const displaySlice=createSlice({
         toggleSide:(state,action)=>{
             state.side=action.payload
         },
+        addName:(state,action)=>{
+
+            state.name=action.payload
+        }, 
 
 
 
@@ -32,5 +37,5 @@ const displaySlice=createSlice({
     }
 })
 
-export const {addResult,addData,toggleShow,toggleSide}= displaySlice.actions;
+export const {addResult,addData,toggleShow,toggleSide,addName}= displaySlice.actions;
 export default displaySlice.reducer;

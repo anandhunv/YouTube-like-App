@@ -17,14 +17,14 @@ const ChannelDetails = ({ data, videoId }) => {
   return (
     <div className='bg-neutral-950 p-3 rounded-lg'>
       <div>
-        <h1 className='text-xl font-medium'>{video?.items?.[0]?.snippet?.title}</h1>
+        <h1 className='md:text-xl text-base font-medium'>{video?.items?.[0]?.snippet?.title}</h1>
         <div className='flex mt-1'>
           <div>
-            <img src={channels?.[0]?.snippet?.thumbnails?.high?.url} alt='' className='bg-gray-50 w-12 h-12 rounded-full mr-4' />
+            <img src={channels?.[0]?.snippet?.thumbnails?.high?.url} alt='' className='bg-gray-50 md:w-12 md:h-12 w-10 h-10 rounded-full mr-4' />
           </div>
-          <div>
-            <h1 className='font-medium text-base'>{channels?.[0]?.snippet?.title}</h1>
-            <h1 className='text-sm font-roboto text-gray-500'>{formattedCount} subscribers</h1>
+          <div className="md:mt-0 ">
+            <h1 className='font-medium md:text-base text-sm'>{channels?.[0]?.snippet?.title}</h1>
+            <h1 className='md:text-sm text-[14px] font-roboto text-gray-500'>{formattedCount} subscribers</h1>
           </div>
         </div>
       </div>

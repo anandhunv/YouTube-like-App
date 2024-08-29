@@ -41,4 +41,5 @@ Developed a YouTube-like video streaming app that includes essential features su
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/username/video-streaming-app.git
+   git clone https://github.com/anandhunv/YouTube-like-App.git
+   
